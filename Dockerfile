@@ -10,7 +10,7 @@ ENV  DATABASE_URL=postgresql://user:password@localhost:5432/library
 USER nobody
 COPY --chown=nobody --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
 COPY --chown=nobody --from=builder /usr/local/bin/uvicorn /usr/local/bin/uvicorn
-COPY --chown=nobody /api/models.py /db/main.py /app
+COPY --chown=nobody /api /db/main.py /app
 WORKDIR /app
 EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
