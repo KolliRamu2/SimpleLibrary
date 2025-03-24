@@ -1,6 +1,7 @@
 # builder stage 
 FROM python:3.11-alpine AS builder
 WORKDIR /app
+RUN apk add --no-cache gcc musl-dev postgresql-dev
 COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
