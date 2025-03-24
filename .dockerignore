@@ -25,7 +25,6 @@ env/
 # Ignore Docker-related files
 Dockerfile
 docker-compose.yml
-requirements.txt
 .dockerignore
 # Ignore test directories and files
 tests/
