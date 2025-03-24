@@ -19,9 +19,9 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 # set enviornment variable connection string to connect with database
 ENV  DATABASE_URL=postgresql://user:password@localhost:5432/library
-USER nobody
 # Install runtime dependencies, including PostgreSQL client libraries
 RUN apk add --no-cache libpq
+USER nobody
 # Copy installed dependencies from the builder stage
 COPY --chown=nobody --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
 COPY --chown=nobody --from=builder /usr/local/bin /usr/local/bin
